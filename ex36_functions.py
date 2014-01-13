@@ -537,16 +537,21 @@ def combat_boss():
 				print("\t2. Lui mettre un coup d'epee ?")
 			if poison == True:
 				attaque = input(prompt_poison)
-			else:
-				attaque = input(prompt)
+			attaque = input(prompt)
 			if attaque == "1" or "magie" in attaque:
 				print("\nVous lancez un rayon magique tout droit sorti de votre entrejambe et va s'ecraser sur le visage de Justin Bieber !\n")
 				boss_HP -= magie_dmg
-				print("J.B. a encore", boss_HP, "point(s) de vie.")
+				if boss_HP > 0:
+					print("J.B. a encore", boss_HP, "point(s) de vie.")
+				elif boss_HP <= 0:
+					break
 			elif (attaque == "2" or "epee" in attaque) and epee == True:
 				print("\nVous donnez un grand coup d'epee a Justin Bieber qui lance un cri de douleur, et vous aimez ca.\n")
 				boss_HP -= epee_dmg
-				print("J.B. a encore", boss_HP, "point(s) de vie.")
+				if boss_HP > 0:
+					print("J.B. a encore", boss_HP, "point(s) de vie.")
+				elif boss_HP <= 0:
+					break
 			else:
 				print("\nVous n'avez pas ete assez clair, vous perdez un tour...\n")
 				print("J.B. a encore", boss_HP, "point(s) de vie.")
@@ -560,7 +565,7 @@ def combat_boss():
 					print("Votre armure vous protege un peu")
 				if poison == True:
 					player_HP -= poison_dmg
-					print("Vous etes toujours empoisone, vous perdez un peu plus de vie...")				
+					print("Vous etes toujours empoisone, vous perdez un peu plus de vie...")			
 			elif attaque_boss == 2:
 				print("\nJustin Bieber vous chante une chanson. Attaque violente !\n")
 				player_HP -= boss_magie
