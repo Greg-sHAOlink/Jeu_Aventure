@@ -289,10 +289,10 @@ def porte_verte():
 				rep_epee = input("> ")
 				if rep_epee.lower() == "oui":
 					epee = True
-					if cle_1 == True:
+					if cle_2 == True:
 						print("\nVous rebroussez chemin arme de votre epee et vous vous dirigez vers la porte rouge.\n")
 						porte_rouge_intro()
-					elif cle_2 == True:
+					elif cle_1 == True:
 						print("\nVous rebroussez chemin arme de votre epee et vous vous dirigez vers la porte bleue.\n")
 						porte_bleue_intro()
 					else:
@@ -309,10 +309,10 @@ def porte_verte():
 							quit()
 				elif rep_epee.lower() == "non":
 					epee = False
-					if cle_1 == True:
+					if cle_2 == True:
 						print("\nVous rebroussez chemin et vous vous dirigez vers la porte rouge.\n")
 						porte_rouge_intro()
-					elif cle_2 == True:
+					elif cle_1 == True:
 						print("\nVous rebroussez chemin et vous vous dirigez vers la porte bleue.\n")
 						porte_bleue_intro()
 					else:
@@ -537,9 +537,10 @@ def combat_boss():
 				print("\t2. Lui mettre un coup d'epee ?")
 			if poison == True:
 				attaque = input(prompt_poison)
-			attaque = input(prompt)
+			elif poison == False:
+				attaque = input(prompt)
 			if attaque == "1" or "magie" in attaque:
-				print("\nVous lancez un rayon magique tout droit sorti de votre entrejambe et va s'ecraser sur le visage de Justin Bieber !\n")
+				print("\nVous lancez un rayon magique tout droit sorti de votre entrejambe qui va s'ecraser sur le visage de Justin Bieber !\n")
 				boss_HP -= magie_dmg
 				if boss_HP > 0:
 					print("J.B. a encore", boss_HP, "point(s) de vie.")
