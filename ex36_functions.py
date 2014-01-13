@@ -280,7 +280,7 @@ def porte_verte():
 					print("\nPetit coquin... Mais non, ce n'est pas ca...\n")
 				else:
 					print("\nNon c'est pas ca...\n")
-			if i == 3:
+			if i >= 3:
 				print("\nVous commencez a ennuyer le coffre qui, baillant, devoile son contenu...")
 				print("Vous y decouvrez une epee !")
 				print("Voulez-vous la prendre ?\n")
@@ -566,7 +566,9 @@ def combat_boss():
 	if boss_HP <= 0:
 		print("Bravo ! Vous avez battu le boss ! Vous voila maintenant libre ! Vous pouvez sortir du donjon. VICTOIRE !")
 		os.system("pause")
+		quit()
 	elif player_HP <= 0:
 		print("Quel dommage, et quelle honte surtout ! Vous avez ete battu par Justin Bieber... Il vous chante une autre chanson\
 pour vous accompagner dans l'autre monde. GAME OVER !")
 		os.system("pause")
+		quit()
