@@ -110,7 +110,7 @@ def porte_rouge():
 	if vampire == False:
 		print("\t3. Vous levez les yeux vers le plafond.")
 	if vampire == True:
-		print("\t3. Vous demandez au vampire s'il peut se nourir d'autre chose que du sang.")
+		print("\t3. Vous demandez au vampire s'il peut se nourir d'autre chose que de sang.")
 	rep_rouge = input("> ")
 	if (rep_rouge == "1" or ("pisse" or "mur") in rep_rouge) and vampire == False:
 		print("\nVous ne pouvez plus vous arreter de pisser, et vous finissez noye dans votre pisse. Game over !")
@@ -354,7 +354,7 @@ def porte_violette():
 	while i < nb_chances_violette:
 		i += 1
 		rep_violette = input("> ")
-		if rep_violette == " ".join(message_code):
+		if rep_violette.lower() == " ".join(message_code):
 			print("\nBravo, c'est la bonne reponse !")
 			print("Une cle tombe du plafond et se glisse dans votre poche.\n")
 			cle_2 = True
@@ -464,11 +464,11 @@ def porte_boss():
 		print("Il s'agit de la derniere partie du jeu...")
 		print("Voici votre equipement et votre statut :")
 		if epee == True:
-			print("\tEpee.")
+			print("\tEpee")
 		if armure == True:
-			print("\tArmure.")
+			print("\tArmure")
 		if magie == True:
-			print("\tMagie.")
+			print("\tMagie")
 		if poison == True:
 			print("\tPar ailleurs, vous etes empoisonne, il ne vous reste plus longtemps a vivre et vous commencez a voir des penis de partout...")
 		if poison == False:
@@ -522,6 +522,7 @@ def combat_boss():
 	print("\nVous voila maintenant face au demon... Qui n'est autre que Justin Bieber.")
 	print("Tentez de le terrasser avec votre force !\n")
 	while boss_HP > 0 and player_HP > 0:
+			print("Il vous reste", player_HP, "point(s) de vie.")	
 			print("Que voulez-vous faire ?")
 			print("\t1. Utiliser votre magie ?")
 			if epee == True:
@@ -534,7 +535,7 @@ def combat_boss():
 				print("\nVous lancez un rayon magique tout droit sorti de votre entrejambe et va s'ecraser sur le visage de Justin Bieber !\n")
 				boss_HP -= magie_dmg
 				print("J.B. a encore", boss_HP, "point(s) de vie.")
-			elif attaque == "2" or "epee" in attaque and epee == True:
+			elif (attaque == "2" or "epee" in attaque) and epee == True:
 				print("\nVous donnez un grand coup d'epee a Justin Bieber qui lance un cri de douleur, et vous aimez ca.\n")
 				boss_HP -= epee_dmg
 				print("J.B. a encore", boss_HP, "point(s) de vie.")
@@ -551,8 +552,7 @@ def combat_boss():
 					print("Votre armure vous protege un peu")
 				if poison == True:
 					player_HP -= poison_dmg
-					print("Vous etes toujours empoisone, vous perdez un peu plus de vie...")
-				print("Il vous reste", player_HP, "point(s) de vie.")					
+					print("Vous etes toujours empoisone, vous perdez un peu plus de vie...")				
 			elif attaque_boss == 2:
 				print("\nJustin Bieber vous chante une chanson. Attaque violente !\n")
 				player_HP -= boss_magie
@@ -562,7 +562,6 @@ def combat_boss():
 				if poison == True:
 					player_HP -= poison_dmg
 					print("Vous etes toujours empoisone, vous perdez un peu plus de vie...")
-				print("Il vous reste", player_HP, "point(s) de vie.")
 	if boss_HP <= 0:
 		print("Bravo ! Vous avez battu le boss ! Vous voila maintenant libre ! Vous pouvez sortir du donjon. VICTOIRE !")
 		os.system("pause")
