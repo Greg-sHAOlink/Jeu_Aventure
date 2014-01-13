@@ -53,6 +53,7 @@ def porte_bleue():
 	if rep_bleue == "1" or "pied" in rep_bleue.lower():
 		print("\nLe lapin tout moche vous mord la jambe, et vous mourrez a cause du poison dans ses dents. Game over !")
 		os.system("pause")
+		quit()
 	elif (rep_bleue == "2" or "crier" in rep_bleue.lower()) and ecouteurs == False:
 		print("\nLe lapin met des ecouteurs pour masquer le bruit que vous faites.\n")
 		ecouteurs = True
@@ -115,6 +116,7 @@ def porte_rouge():
 	if (rep_rouge == "1" or ("pisse" or "mur") in rep_rouge) and vampire == False:
 		print("\nVous ne pouvez plus vous arreter de pisser, et vous finissez noye dans votre pisse. Game over !")
 		os.system("pause")
+		quit()
 	elif (rep_rouge == "1" or ("pisse" or "mur") in rep_rouge) and vampire == True:
 		print("\nLe vampire vous mord aux parties genitales et un etrange pouvoir s'empare de vous...")
 		print("Vous avez recupere un pouvoir magique !\n")
@@ -334,9 +336,11 @@ def porte_verte():
 	if rep_verte == "2" or ("frapper" or "coup" or "pied") in rep_verte:
 		print("\nLa violence de votre coup vous a litteralement dechire la jambe. Vous perdez trop de sang et mourrez. Game over !")
 		os.system("pause")
+		quit()
 	if rep_verte == "3" or ("attend" or "deluge") in rep_verte:
 		print("\nUne tempete d'une violente inouie devaste tout dans la salle et vous dechire en petits morceaux. Game over !")
 		os.system("pause")
+		quit()
 	else:
 		print("\nMerci d'etre plus clair...\n")
 		porte_verte()
@@ -366,6 +370,7 @@ def porte_violette():
 	if cle_2 != True:
 		print("\nMalheureusement, vous n'avez pas trouve le message code... Une corde tombe du plafond et vous vous pendez. Game over !")
 		os.system("pause")
+		quit()
 
 def porte_orange():
 	global cle_1
@@ -457,6 +462,7 @@ def porte_orange():
 		rep_ours = input("> ")
 		print("\nL'ours vous arrache la tete d'un coup de patte. Game over !")
 		os.system("pause")
+		quit()
 
 def porte_boss():
 	if cle_1 == True and cle_2 == True:
@@ -486,6 +492,7 @@ def porte_boss():
 			else:
 				print("\nDevant votre incapacite a ecrire correctement une couleur, le plafond s'ecroule et vous ecrase. Game over !")
 				os.system("pause")
+				quit()
 		else:
 			print("\nVous vous rebroussez chemin et vous dirigez vers la porte bleue.\n")
 			porte_bleue_intro()
@@ -501,6 +508,7 @@ def porte_boss():
 			else:
 				print("\nDevant votre incapacite a ecrire correctement une couleur, le plafond s'ecroule et vous ecrase. Game over !")
 				os.system("pause")
+				quit()
 		else:
 			print("\nVous vous rebroussez chemin et vous dirigez vers la porte rouge.\n")
 			porte_rouge_intro()
